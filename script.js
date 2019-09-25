@@ -14,8 +14,16 @@ function testAPI()
 }
 
 function testGetCategories()
-{
-    axios.get(API_URL+"list.php?c=list")
+{ 
+    axios.get(API_URL+"/list.php?c=list").then(function(response){
+        console.log(response.data.meals);
+        for (let each_category of response.data.meals)
+        {
+            let option = $(`<option value="${each_category.strCategory}">${each_category.strCategory}</option>`)
+            $("#selected-category").append(option);
+        }
+        
+    })
 }
 
 $(function(){
