@@ -1,6 +1,9 @@
 const API_KEY = "1";
 const API_URL = "https://www.themealdb.com/api/json/v1/" + API_KEY;
 
+/* global $ */
+/* global axios */
+
 function testAPI() {
     axios.get(API_URL, {
             params: {
@@ -34,6 +37,9 @@ function getCategories() {
 }
 
 $(function() {
+
+    $(".search-widget").hide();
+    $("#search-by-name-form").show();
 
     getCategories();
 
@@ -85,5 +91,15 @@ $(function() {
             }
         })
     })
+    
+    $("#search-by-name-radio").click(function(){
+        $('.search-widget').hide();
+        $("#search-by-name-form").show();
+    })
+    
+    $("#search-by-category-radio").click(function(){
+       $(".search-widget").hide();
+       $("#search-by-category-form").show();
+    });
 
 })

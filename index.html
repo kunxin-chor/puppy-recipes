@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,30 +10,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Hello, world!</title>
-  </head>
-  <body>
-     <div class='container'>
-         <h1>Recipe Search</h1>
-         <div class='form'>
-            <div id='search-by-name-form'> 
-             <input id='search-input' type='text' class='form-control' placeholder='Enter search terms'/>
-             <button class='mt-3' id='search-button'>Search</button>  
-            </div> 
-         
+</head>
+
+<body>
+    <div class='container'>
+        <h1>Recipe Search</h1>
+        <div class='form'>
             
-            <div id='search-by-category-form'>
+            <div class='form-group'>
+                <input type='radio' id='search-by-name-radio' name='search-by' class='mr-1' checked><label>Name</label>
+                <input type='radio' id='search-by-category-radio' name='search-by' class='mr-1'><label>Category</label>
+            </div>
+            
+            <div id='search-by-name-form' class='search-widget'>
+                <h2>Search by Name</h2>
+                <input id='search-input' type='text' class='form-control' placeholder='Enter search terms' />
+                <button class='mt-3' id='search-button'>Search</button>
+            </div>
+
+            <div id='search-by-category-form' class='search-widget'>
+                <h2>Search by Category</h2>
                 <select id='selected-category' class='form-control'>
                      
                 </select>
-                    <button class='mt-3' id='search-by-category-button'>Search by Category</button>
+                <button class='mt-3' id='search-by-category-button'>Search by Category</button>
 
             </div>
-                     
-         </div>
-         <div id='results'>
-             
-         </div>
-     </div>
+
+        </div>
+        <div id='results'>
+
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -40,6 +49,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-    <script src="script.js"></script> 
-  </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
